@@ -1,4 +1,4 @@
-/*Page 34, the basic 13.*/
+/*Page 34, The Basic 13*/
 
 // 1. Print 1-255
 
