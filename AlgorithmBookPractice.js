@@ -108,7 +108,7 @@ console.log(findMinMaxAvg([1,2,3,4,5]));
 
 // --------------------------------------------------------
 
-// 6. Swap String For Array Negative Values
+// 7. Swap String For Array Negative Values
 
 // Replace any negative array values with 'Dojo'.
 function noNegatives(arr) {
@@ -124,7 +124,7 @@ console.log(noNegatives([-2,3,5,6,-15]));
 
 // --------------------------------------------------------
 
-// 7. Print Odds 1-255
+// 8. Print Odds 1-255
 
 // Print all odd integers from 1 to 255.
 function gimmeTheOdds (min,max) {
@@ -140,7 +140,7 @@ gimmeTheOdds(1,255);
 
 // --------------------------------------------------------
 
-// 8. Iterate and Print Array
+// 9. Iterate and Print Array
 
 // Iterate through a given array, printing each value.
 function iterate (arr) {
@@ -153,7 +153,7 @@ iterate([7,25,'Hey',34,'Hello']);
 
 // --------------------------------------------------------
 
-// 9. Get and Print Average
+// 10. Get and Print Average
 
 // Analyze an array’s values and print the average.
 function getAvg(arr) {
@@ -167,7 +167,7 @@ console.log(getAvg([1,2,3,4,5,6,7,8,9,10]));
 
 // --------------------------------------------------------
 
-// 10. Square the Values
+// 11. Square the Values
 
 // Square each value in a given array, returning that same array with changed values.
 function squareVal(arr) {
@@ -177,6 +177,35 @@ function squareVal(arr) {
     return(arr)
 }
 console.log(squareVal([1,2,3,4,5,6,7,8,9,10]));
+
+// --------------------------------------------------------
+
+// 12. Zero Out Negative Numbers
+
+// Return the given array, after setting any negative values to zero.
+function noNegatives(arr) {
+    for(var i=0; i<arr.length; i++) {
+        if(arr[i] < 0) {
+            arr[i] = 0;
+        }
+    }
+    return arr;
+}
+console.log(noNegatives([-1, -2, 4, 5, 9, -3, 0]));
+
+// --------------------------------------------------------
+
+// 13. Shift Array Values
+
+// NOT SURE WHAT TO DO
+
+// Given an array, move all values forward by one index, dropping the first and leaving a '0' value at the
+// end.
+function shiftArr(arr) {
+
+}
+
+console.log(shiftArr([1,2,3,4,5,6,7]));
 
 // --------------------------------------------------------
 
