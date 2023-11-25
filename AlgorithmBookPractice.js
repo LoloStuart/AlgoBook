@@ -329,12 +329,12 @@ function rollDie() {
     var sum = 0;
     var die1 = Math.floor(Math.random() * 6) + 1;
     var die2 = Math.floor(Math.random() * 6) + 1;
-    var diceSum= die1 + die2;
+    var diceSum = die1 + die2;
     var minVal = diceSum;
     var maxVal = diceSum;
     var numberOfRolls = 1;
-    
-    if(die1 == die2) {
+
+    if (die1 == die2) {
         console.log("You got doubles on the initial roll. Congrats, no stats!");
         return;
     }
@@ -359,4 +359,74 @@ function rollDie() {
 rollDie();
 
 
+
 // --------------------------------------------------------
+
+// Page 41: Sum To One Digit
+
+/*Implement a function sumToOne(num) that,
+given a number, sums that number’s digits
+repeatedly until the sum is only one digit. Return
+that final one digit result. */
+
+function sumToOne(num) {
+    var sum = 0;
+    while (num > 0 || sum > 9) {
+        if (num == 0) {
+            num = sum;
+            sum = 0;
+        }
+        sum = sum + num % 10;
+        num = Math.floor(num / 10);
+    }
+    return sum;
+}
+
+console.log(sumToOne(12));
+
+// --------------------------------------------------------
+
+// Page 42: Fibonacci ([0, 1, 1, 2, 3, 5, 8, 13, 21, etc.])
+
+/*Implement the Fibonacci function, a famous mathematical equation that generates a numerical
+sequence such that each number is the sum of the previous two. The Fibonacci numbers at index 0
+and 1, coincidentally, have values of 0 and 1. Your function should accept an argument of which
+Fibonacci number. */
+
+function fibonacci(num) {
+    var arr= [0, 1];
+    for(var i=2; i < num + 1; i++){
+        arr.push(arr[i-2] + arr[i-1]);
+    }
+    return arr[num];
+}
+
+console.log(fibonacci(6));
+
+// --------------------------------------------------------
+
+// Page 43: Last Digit of A to the B
+
+/*Modern computers can handle very large numbers, but this ability has limits. If a number is repeatedly
+multiplied by itself, it eventually exceeds the computer’s ability to accurately represent it. (Side note: the
+number of times it is multiplied by itself is called the exponent.) 
+
+For an optional end-of-chapter challenge, determine the smallest (least significant) digit of a number that is potentially very, very large.
+You may find that you must do this without computing the actual (unimaginably large) number.
+
+Implement a function that accepts two non-negative integers as arguments. Function lastDigitAtoB(a,
+b) should return the last digit of the first number (a) raised to an exponent of the second number (b).
+Examples: given (3, 4), you should return 1 (the last digit of 81: 3 * 3 * 3 * 3). Given (12, 5), return
+2 (the least significant digit of 248832, which is 12 * 12 * 12 * 12 * 12). */
+
+//Below has issues and wouldn't be efficient.
+
+function lastDigitAToB(a,b) {
+    if(b=0) {
+        return a % 10;
+    }
+    var result = a ** b;
+    return result % 10;
+}
+
+console.log(lastDigitAToB(5,0));
